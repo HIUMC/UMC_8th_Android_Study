@@ -15,7 +15,7 @@ Android 워크북 &amp; 미션 제출 레포지토리 (ദ്ദി⩌𖥦⩌)
       <sub>Android 개발자</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/username2">
+      <a href="https://github.com/onlyone130">
         <img src="https://github.com/username2.png" width="100px;" alt="타마 프로필"/>
         <br />
         <sub><b>타마/안지선</b></sub>
