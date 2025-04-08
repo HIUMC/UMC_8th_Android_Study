@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">week3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_panel_title">새벽 3시, 온기가\n필요한 너에게</string>
+    <string name="home_panel_album1_title">Butter</string>
+    <string name="home_panel_album2_title">LILAC</string>
+    <string name="home_panel_playlist_description">총 16곡 2023.10.05</string>
+    <string name="home_album1_singer">BTS</string>
+    <string name="home_album2_singer">IU</string>
+</resources>
