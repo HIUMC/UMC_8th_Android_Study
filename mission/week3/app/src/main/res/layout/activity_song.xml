@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SongActivity">
+    android:background="@color/white"
+    tools:context=".ui.player.SongActivity">
 
     <ImageView
         android:id="@+id/song_btn_player_setting_iv"

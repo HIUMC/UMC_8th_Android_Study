@@ -1,6 +1,4 @@
-package com.example.week3
-
-import androidx.annotation.DrawableRes
+package com.example.week3.model
 
 data class Song(
     val title: String = "",

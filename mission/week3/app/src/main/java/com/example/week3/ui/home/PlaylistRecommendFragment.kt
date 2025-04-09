@@ -1,4 +1,4 @@
-package com.example.week3.fragment
+package com.example.week3.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.week3.R
-import com.example.week3.Song
+import com.example.week3.model.Song
 import com.example.week3.databinding.FragmentPlaylistRecommendBinding
 
 class PlaylistRecommendFragment(

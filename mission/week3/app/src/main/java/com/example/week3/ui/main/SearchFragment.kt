@@ -1,22 +1,22 @@
-package com.example.week3.fragment
+package com.example.week3.ui.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.week3.databinding.FragmentSavedMusicBinding
+import com.example.week3.databinding.FragmentSearchBinding
 
-class SavedMusicFragment: Fragment() {
+class SearchFragment : Fragment() {
 
-    lateinit var binding: FragmentSavedMusicBinding
+    lateinit var binding: FragmentSearchBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentSavedMusicBinding.inflate(layoutInflater)
+    ): View {
+        binding = FragmentSearchBinding.inflate(inflater, container, false)
 
         return binding.root
     }

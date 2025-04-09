@@ -1,22 +1,22 @@
-package com.example.week3.fragment
+package com.example.week3.ui.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.week3.databinding.FragmentDeviceMusicBinding
+import com.example.week3.databinding.FragmentLookBinding
 
-class DeviceMusicFragment: Fragment() {
+class LookFragment : Fragment() {
 
-    lateinit var binding: FragmentDeviceMusicBinding
+    lateinit var binding: FragmentLookBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentDeviceMusicBinding.inflate(layoutInflater)
+    ): View {
+        binding = FragmentLookBinding.inflate(inflater, container, false)
 
         return binding.root
     }

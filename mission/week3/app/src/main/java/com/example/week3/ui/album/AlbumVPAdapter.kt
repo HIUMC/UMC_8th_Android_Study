@@ -1,10 +1,7 @@
-package com.example.week3.adapter
+package com.example.week3.ui.album
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.week3.fragment.DetailFragment
-import com.example.week3.fragment.SongFragment
-import com.example.week3.fragment.VideoFragment
 
 class AlbumVPAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
 

@@ -1,12 +1,10 @@
-package com.example.week3
+package com.example.week3.ui.player
 
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.week3.R
 import com.example.week3.databinding.ActivitySongBinding
 
 class SongActivity : AppCompatActivity() {

@@ -1,14 +1,17 @@
-package com.example.week3
+package com.example.week3.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.week3.R
 import com.example.week3.databinding.ActivityMainBinding
-import com.example.week3.fragment.HomeFragment
-import com.example.week3.fragment.LockerFragment
-import com.example.week3.fragment.LookFragment
-import com.example.week3.fragment.SearchFragment
+import com.example.week3.model.Song
+import com.example.week3.ui.main.HomeFragment
+import com.example.week3.ui.main.LockerFragment
+import com.example.week3.ui.main.LookFragment
+import com.example.week3.ui.main.SearchFragment
+import com.example.week3.ui.player.SongActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,8 +22,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupMainPlayerClickListener()
         initBottomNavigation()
+    }
 
+    private fun setupMainPlayerClickListener() {
         val song = Song(
             title = binding.mainMiniPlayerTitleTv.text.toString(),
             singer = binding.mainMiniPlayerSingerTv.text.toString(),
@@ -35,8 +41,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("cover", song.cover)
             startActivity(intent)
         }
-
-        Log.d("Song", "${song.title}, ${song.singer}")
     }
 
     private fun initBottomNavigation() {
