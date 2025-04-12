@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Flo)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -30,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         val song = Song(
             title = binding.mainMiniPlayerTitleTv.text.toString(),
             singer = binding.mainMiniPlayerSingerTv.text.toString(),
-            cover = R.drawable.img_album_exp2
+            cover = R.drawable.img_album_exp2,
+            second = 0,
+            playTime = 60,
+            isPlaying = false
         )
 
         binding.mainPlayerCl.setOnClickListener {
@@ -39,6 +43,9 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("title", song.title)
             intent.putExtra("singer", song.singer)
             intent.putExtra("cover", song.cover)
+            intent.putExtra("second", song.second)
+            intent.putExtra("playTime", song.playTime)
+            intent.putExtra("isPlaying", song.isPlaying)
             startActivity(intent)
         }
     }
