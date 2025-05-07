@@ -12,10 +12,13 @@ import com.example.week3.ui.main.LockerFragment
 import com.example.week3.ui.main.LookFragment
 import com.example.week3.ui.main.SearchFragment
 import com.example.week3.ui.player.SongActivity
+import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+    private val gson: Gson = Gson()
+    private var song: Song = Song()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,15 +31,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupMainPlayerClickListener() {
-        val song = Song(
-            title = binding.mainMiniPlayerTitleTv.text.toString(),
-            singer = binding.mainMiniPlayerSingerTv.text.toString(),
-            cover = R.drawable.img_album_exp2,
-            second = 0,
-            playTime = 60,
-            isPlaying = false
-        )
-
         binding.mainPlayerCl.setOnClickListener {
             //startActivity(Intent(this, SongActivity::class.java))
             val intent = Intent(this, SongActivity::class.java)
@@ -46,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("second", song.second)
             intent.putExtra("playTime", song.playTime)
             intent.putExtra("isPlaying", song.isPlaying)
+            intent.putExtra("music", song.music)
             startActivity(intent)
         }
     }
@@ -89,5 +84,25 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
+        val songJson = sharedPreferences.getString("songData", null)
+
+        song = if (songJson == null) {
+            Song("라일락", "아이유", R.drawable.img_album_exp2, 0, 60, false, R.raw.music_piano)
+        } else {
+            gson.fromJson(songJson, Song::class.java)
+        }
+
+        setMiniPlayer(song)
+    }
+
+    private fun setMiniPlayer(song: Song) {
+        binding.mainMiniPlayerTitleTv.text = song.title
+        binding.mainMiniPlayerSingerTv.text = song.singer
+        binding.mainSongProgressSb.progress = (song.second * 100000) / song.playTime
     }
 }
