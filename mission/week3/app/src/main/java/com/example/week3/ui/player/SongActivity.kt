@@ -162,13 +162,12 @@ class SongActivity : AppCompatActivity() {
     }
 
     private fun startTimer() {
-        timer = Timer(playTime = song.playTime, isPlaying = song.isPlaying)
+        timer = Timer(playTime = song.playTime, second = song.second, isPlaying = song.isPlaying)
         timer.start()
     }
 
-    inner class Timer(private val playTime: Int, var isPlaying: Boolean = true): Thread()  {
-        private var second: Int = 0
-        private var mills: Float = 0f
+    inner class Timer(private val playTime: Int, private var second: Int, var isPlaying: Boolean = true): Thread()  {
+        private var mills: Float = second.times(1000f)
 
         @SuppressLint("DefaultLocale")
         override fun run() {
@@ -184,7 +183,7 @@ class SongActivity : AppCompatActivity() {
                         mills += 50
 
                         runOnUiThread {
-                            binding.songProgressSb.progress = ((mills / playTime)*100).toInt()
+                            binding.songProgressSb.progress = (((mills) / playTime)*100).toInt()
                         }
 
                         if (mills % 1000 == 0f) {
